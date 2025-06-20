@@ -3,6 +3,7 @@
 
 :root {
   --background: #ffffff;
+  --box-background: #f1f1f1;
   --foreground: #171717;
   --font-manrope: 'Manrope', sans-serif;
   --secondary: #d87d4a;
@@ -16,6 +17,8 @@
   --color-secondary: var(--secondary);
   --color-primary: var(--primary);
   --color-text-secondary: var(--text-secondary);
+  --color-box-background: var(--box-background);
+  --screen-xs: 480px;
 }
 
 @media (prefers-color-scheme: dark) {
