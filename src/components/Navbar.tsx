@@ -26,26 +26,26 @@ export default function Navbar() {
     },
   ];
   return (
-    <div className="flex bg-red400 justify-between items-center p-6 mx-10 border-b-2 border-red-400">
-      <Image
-        src="/logo.svg"
-        width={100}
-        height={100}
-        alt="Picture of the author"
-      />
-      <div>
-        <ul className="flex gap-10">
-          {navItems.map((item) => (
-            <li
-              key={item.idx}
-              className="text-white hover:text-secondary font-semibold transition-colors duration-400 ease-in-out"
-            >
-              <a href={item.link}>{item.name}</a>
-            </li>
-          ))}
-        </ul>
+    <div className=" px-16 bg-primary">
+      <div className="flex justify-between items-center p-6 border-b-1 border-gray-600">
+        <Image src="/logo.svg" width={100} height={100} alt="Logo" />
+        <div>
+          <ul className="flex gap-10">
+            {navItems.map((item) => (
+              <li
+                key={item.idx}
+                className="text-white text-sm hover:text-secondary font-semibold transition-colors duration-400 ease-in-out"
+              >
+                <a href={item.link}>{item.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <IoCartOutline
+          size={20}
+          className="text-white cursor-pointer hover:text-secondary transition-colors duration-400 ease-in-out"
+        />
       </div>
-      < IoCartOutline />
     </div>
   );
 }
