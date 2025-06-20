@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { IoCartOutline } from "react-icons/io5";
 
@@ -36,7 +37,7 @@ export default function Navbar() {
                 key={item.idx}
                 className="text-white text-sm hover:text-secondary font-semibold transition-colors duration-400 ease-in-out"
               >
-                <a href={item.link}>{item.name}</a>
+                <Link href={item.link}>{item.name}</Link>
               </li>
             ))}
           </ul>
