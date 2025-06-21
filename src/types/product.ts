@@ -9,7 +9,7 @@ interface IncludedItem {
   item: string;
 }
 
-interface Gallery {
+export interface Gallery {
   first: ProductImageSet;
   second: ProductImageSet;
   third: ProductImageSet;

@@ -3,5 +3,6 @@ import { getProducts } from "@/lib/filterProducts";
 
 export default function Headphones() {
   const products = getProducts("headphones");
+  console.log(products)
   return <ProductsList products={products} />;
 }

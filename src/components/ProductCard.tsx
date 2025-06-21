@@ -1,24 +1,25 @@
 import Image from "next/image";
 import Button from "./ui/Button";
+import Link from "next/link";
+import { slugify } from "@/lib/utils/slugify";
+import { QuantitySelector } from "./ui/QuantitySelector";
+import { Product } from "@/types/product";
 
 interface ProductCardProps {
-  id: number;
-  name: string;
-  description: string;
-  image: { mobile: string; tablet: string; desktop: string };
+  product: Product;
   isNew?: boolean;
   imagePosition?: "left" | "right";
+  showDetails: boolean;
 }
 
 export default function ProductCard({
-  name,
-  description,
-  image,
+  product,
   isNew = false,
   imagePosition = "left",
+  showDetails,
 }: ProductCardProps) {
   return (
-    <section className="bg-gray-50 py-16 lg:py-24">
+    <section className="py-16 lg:py-24">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div
@@ -29,10 +30,10 @@ export default function ProductCard({
             }`}
           >
             <div className="relative w-full max-w-lg">
-              <div className="bg-gray-200 rounded-lg p-8 lg:p-12">
+              <div className="bg-box-background rounded-lg p-8 lg:p-12">
                 <Image
-                  src={image.desktop || "/placeholder.svg"}
-                  alt={name}
+                  src={product.image.desktop || "/placeholder.svg"}
+                  alt={product.name}
                   width={400}
                   height={400}
                   className="w-full h-auto object-contain"
@@ -51,20 +52,27 @@ export default function ProductCard({
             <div className="space-y-4 lg:space-y-6">
               {isNew && (
                 <p className="text-secondary text-sm lg:text-base tracking-[0.5em] uppercase font-light">
-                  NEW PRODUCT
+                  new product
                 </p>
               )}
-
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight uppercase">
-                {name}
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight uppercase">
+                {product.name}
               </h2>
-
-              <p className="text-gray-600 text-base lg:text-lg leading-relaxed">
-                {description}
+              <p className="text-gray-secondary text-base lg:text-lg leading-relaxed">
+                {product.description}
               </p>
             </div>
 
-            <Button>SEE PRODUCT</Button>
+            {showDetails ? (
+              <>
+                <p className="font-semibold text-lg">{`$ ${product.price}`}</p>
+                <QuantitySelector />
+              </>
+            ) : (
+              <Button>
+                <Link href={`/headphones/${slugify(product.slug)}`}>See Product</Link>
+              </Button>
+            )}
           </div>
         </div>
       </div>

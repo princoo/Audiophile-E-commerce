@@ -7,12 +7,10 @@ export default function ProductsList({ products }: { products: Product[] }) {
       {products.map((product, index) => (
         <ProductCard
           key={product.id}
-          id={product.id}
-          name={product.name}
-          description={product.description}
-          image={product.image}
+          product={product}
           isNew={product.new}
           imagePosition={index % 2 === 0 ? "left" : "right"}
+          showDetails={false}
         />
       ))}
     </div>
