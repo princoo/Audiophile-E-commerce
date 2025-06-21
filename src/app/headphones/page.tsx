@@ -1,6 +1,7 @@
+import ProductsList from "@/components/ProductList";
+import { getProducts } from "@/lib/filterProducts";
 
 export default function Headphones() {
-  return (
-    <div>page</div>
-  )
+  const products = getProducts("headphones");
+  return <ProductsList products={products} />;
 }

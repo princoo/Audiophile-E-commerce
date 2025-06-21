@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <div className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <Recommendation />
         <Products />
         <About />
