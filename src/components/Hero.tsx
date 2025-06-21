@@ -15,7 +15,7 @@ export default function Hero() {
         <p className="text-6xl font-bold uppercase mt-4">
           xx99 mark ii headphones
         </p>
-        <p className="mt-6 text-text-secondary">
+        <p className="mt-6 text-gray-secondary">
           <span className="block">
             Experience natural, lifelike audio and exceptional
           </span>

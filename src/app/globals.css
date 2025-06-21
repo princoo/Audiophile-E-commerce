@@ -8,7 +8,8 @@
   --font-manrope: 'Manrope', sans-serif;
   --secondary: #d87d4a;
   --primary: #191919;
-  --text-secondary: #ffffff80
+  --black-hover:#c7c2c2;
+  --text-secondary: #b5b1b1;
 }
 
 @theme inline {
@@ -16,9 +17,11 @@
   --color-foreground: var(--foreground);
   --color-secondary: var(--secondary);
   --color-primary: var(--primary);
-  --color-text-secondary: var(--text-secondary);
+  --color-gray-secondary: var(--text-secondary);
   --color-box-background: var(--box-background);
-  --screen-xs: 480px;
+  --color-black-hover: var(--black-hover);
+  --breakpoint-vs: 30rem;
+
 }
 
 @media (prefers-color-scheme: dark) {

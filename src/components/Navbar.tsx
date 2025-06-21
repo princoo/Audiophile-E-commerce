@@ -8,22 +8,22 @@ export default function Navbar() {
     {
       idx: 0,
       name: "HOME",
-      link: "#",
+      link: "/",
     },
     {
       idx: 1,
       name: "HEADPHONE",
-      link: "#",
+      link: "/headphones",
     },
     {
       idx: 2,
       name: "SPEAKERS",
-      link: "#",
+      link: "/speakers",
     },
     {
       idx: 3,
       name: "EARPHONES",
-      link: "#",
+      link: "/earphones",
     },
   ];
   return (

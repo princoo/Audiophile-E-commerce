@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "outline";
   size?: "small" | "medium" | "large";
   className?: string;
 }
@@ -14,7 +14,7 @@ const Button: React.FC<ButtonProps> = ({
   className,
   ...props
 }) => {
-  const baseStyles = "text-sm cursor-pointer uppercase font-bold";
+  const baseStyles = "text-sm cursor-pointer uppercase font-bold transition-colors duration-400 min-w-[150px] max-w-[200px]";
 
   const sizeStyles = {
     small: "text-sm px-3 py-1.5",
@@ -24,7 +24,8 @@ const Button: React.FC<ButtonProps> = ({
 
   const variantStyles = {
     primary: "bg-secondary text-white hover:bg-secondary/40",
-    secondary: "bg-gray text-white hover:bg-gray/90",
+    secondary: "bg-black text-white hover:bg-black-hover",
+    outline: "border border-primary text-black hover:bg-black hover:text-white",
   };
 
   const combined = clsx(

@@ -34,7 +34,7 @@ export default function Recommendation() {
             alt={item.title}
             width={400}
             height={400}
-            className="w-32 h-32 object-cover rounded-md absolute -top-14 left-1/2 transform -translate-x-1/2"
+            className="w-32 h-32 object-cover absolute -top-14 left-1/2 transform -translate-x-1/2"
           />
           <div className="text-center uppercase relative">
             <p className="font-semibold">headphones</p>
