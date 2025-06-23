@@ -20,7 +20,7 @@ export default function ProductGallery({ gallery }: ProductGalleryProps) {
             {/* Top Left Image */}
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
               <Image
-                src={first.desktop || "/placeholder.svg?height=300&width=400"}
+                src={first.desktop || "/placeholder.svg"}
                 alt={"Product image 1"}
                 fill
                 className="object-cover"
@@ -30,7 +30,7 @@ export default function ProductGallery({ gallery }: ProductGalleryProps) {
             {/* Bottom Left Image */}
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
               <Image
-                src={second.desktop || "/placeholder.svg?height=300&width=400"}
+                src={second.desktop || "/placeholder.svg"}
                 alt={"Product image 2"}
                 fill
                 className="object-cover"
@@ -41,7 +41,7 @@ export default function ProductGallery({ gallery }: ProductGalleryProps) {
           {/* Right Column - Large image */}
           <div className="relative aspect-[3/4] lg:aspect-[4/5] overflow-hidden rounded-lg">
               <Image
-                src={third.desktop || "/placeholder.svg?height=300&width=400"}
+                src={third.desktop || "/placeholder.svg"}
                 alt={"Product image 3"}
                 fill
                 className="object-cover"

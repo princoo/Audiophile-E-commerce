@@ -10,7 +10,7 @@ export default function CartItem({
     <div className="flex items-center gap-4">
       <div className="w-16 h-16 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
         <Image
-          src={item.image || "/placeholder.svg?height=64&width=64"}
+          src={item.image || "/placeholder.svg"}
           alt={item.name}
           width={64}
           height={64}

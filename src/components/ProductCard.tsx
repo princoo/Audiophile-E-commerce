@@ -4,7 +4,7 @@ import Link from "next/link";
 import { slugify } from "@/lib/utils/slugify";
 import { Product } from "@/types/product";
 import ProductActions from "./ProductActions";
-import NavigateBack from "./NavigateBack";
+// import NavigateBack from "./NavigateBack";
 
 interface ProductCardProps {
   product: Product;
@@ -21,9 +21,8 @@ export default function ProductCard({
 }: ProductCardProps) {
   return (
     <section className="py-16 lg:py-24">
-      
       <div className="container mx-auto px-4 lg:px-8">
-        <NavigateBack/>
+        {/* <NavigateBack/> */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div
             className={`flex justify-center ${
@@ -69,12 +68,12 @@ export default function ProductCard({
             {showDetails ? (
               <>
                 <p className="font-semibold text-lg">{`$ ${product.price}`}</p>
-                <ProductActions product={product}/>
+                <ProductActions product={product} />
               </>
             ) : (
-              <Button>
-                <Link href={`/headphones/${slugify(product.slug)}`}>See Product</Link>
-              </Button>
+              <Link href={`/${product.category}/${slugify(product.slug)}`}>
+                <Button>See Product</Button>
+              </Link>
             )}
           </div>
         </div>

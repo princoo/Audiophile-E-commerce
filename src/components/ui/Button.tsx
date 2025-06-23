@@ -5,6 +5,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "outline";
   size?: "small" | "medium" | "large";
   className?: string;
+  disabled?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -12,6 +13,7 @@ const Button: React.FC<ButtonProps> = ({
   variant = "primary",
   size = "medium",
   className,
+  disabled = false,
   ...props
 }) => {
   const baseStyles = "text-sm cursor-pointer uppercase font-bold transition-colors duration-400 min-w-[150px] max-w-[200px]";
@@ -21,6 +23,7 @@ const Button: React.FC<ButtonProps> = ({
     medium: "text-base px-3 py-3",
     large: "text-lg px-5 py-3",
   };
+  const disabledStyles = disabled && "bg-secondary/40 cursor-not-allowed";
 
   const variantStyles = {
     primary: "bg-secondary text-white hover:bg-secondary/40",
@@ -32,11 +35,12 @@ const Button: React.FC<ButtonProps> = ({
     baseStyles,
     sizeStyles[size],
     variantStyles[variant],
-    className
+    disabledStyles,
+    className,
   );
 
   return (
-    <button className={combined} {...props}>
+    <button className={combined} {...props} disabled={disabled}>
       {children}
     </button>
   );

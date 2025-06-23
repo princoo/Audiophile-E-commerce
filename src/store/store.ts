@@ -6,7 +6,7 @@ import cartReducer from "./slices/cartSlice"
 const persistConfig = {
   key: "audiophile-root",
   storage,
-  whitelist: ["cart"], // Only persist cart state
+  whitelist: ["cart"], //only persist cart state
 }
 
 const rootReducer = combineReducers({

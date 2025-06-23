@@ -13,7 +13,6 @@ export function OrderSummary({ onSubmit, isSubmitting }: OrderSummaryProps) {
   const { items, total } = useAppSelector((state) => state.cart);
 
   const shipping = 50;
-  const vat = Math.round(total * 0.2);
   const grandTotal = total + shipping;
 
   return (
@@ -27,7 +26,7 @@ export function OrderSummary({ onSubmit, isSubmitting }: OrderSummaryProps) {
           <div key={item.id} className="flex items-center gap-4">
             <div className="w-16 h-16 bg-box-background rounded-lg overflow-hidden flex-shrink-0">
               <Image
-                src={item.image || "/placeholder.svg?height=64&width=64"}
+                src={item.image || "/placeholder.svg"}
                 alt={item.name}
                 width={64}
                 height={64}
@@ -64,9 +63,7 @@ export function OrderSummary({ onSubmit, isSubmitting }: OrderSummaryProps) {
         </div>
         <div className="flex justify-between">
           <span className="text-gray-secondary">VAT (INCLUDED)</span>
-          <span className="font-bold text-gray-black">
-            ${vat.toLocaleString()}
-          </span>
+          <span className="font-bold text-gray-black">$0</span>
         </div>
         <div className="flex justify-between pt-2">
           <span className="text-gray-secondary">GRAND TOTAL</span>
@@ -78,7 +75,7 @@ export function OrderSummary({ onSubmit, isSubmitting }: OrderSummaryProps) {
 
       <Button
         onClick={onSubmit}
-        disabled={isSubmitting}
+        disabled={isSubmitting || items.length === 0}
         variant="primary"
         size="large"
         className="text-xs"

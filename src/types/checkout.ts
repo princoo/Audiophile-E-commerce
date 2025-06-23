@@ -23,3 +23,8 @@ export interface OrderSummaryItem {
   quantity: number
   image: string
 }
+
+export interface OrderConfirmationModalProps {
+  isOpen: boolean
+  onClose: () => void
+}
