@@ -1,33 +1,15 @@
+import { recommendations } from "@/constants/recommendations";
 import Image from "next/image";
+import Link from "next/link";
 import { FaAngleRight } from "react-icons/fa6";
 
 export default function Recommendation() {
-  const recommendations = [
-    {
-      idx: 0,
-      title: "headphones",
-      image: "/images/image-headphones.png",
-      href: "/headphones",
-    },
-    {
-      idx: 1,
-      title: "speakers",
-      image: "/images/image-speakers.png",
-      href: "/speakers",
-    },
-    {
-      idx: 2,
-      title: "earphones",
-      image: "/images/image-earphones.png",
-      href: "/earphones",
-    },
-  ];
   return (
     <div className="flex gap-20 sm:gap-6 w-full px-5 md:px-10 flex-col  sm:flex-row mt-52">
       {recommendations.map((item) => (
-        <div
+        <Link href={item.href}
           key={item.idx}
-          className="cursor-pointer group flex-1 shrink bg-box-background px-2 sm:px-8 pt-24 pb-5 rounded-md relative"
+          className="border-transparent border-2 hover:border-2 hover:border-secondary hover:border-dashed cursor-pointer group flex-1 shrink bg-box-background px-2 sm:px-8 pt-24 pb-5 rounded-md relative"
         >
           <Image
             src={item.image}
@@ -43,7 +25,7 @@ export default function Recommendation() {
               <FaAngleRight className="text-secondary" />
             </p>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

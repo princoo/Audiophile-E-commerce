@@ -2,8 +2,9 @@ import Image from "next/image";
 import Button from "./ui/Button";
 import Link from "next/link";
 import { slugify } from "@/lib/utils/slugify";
-import { QuantitySelector } from "./ui/QuantitySelector";
 import { Product } from "@/types/product";
+import ProductActions from "./ProductActions";
+import NavigateBack from "./NavigateBack";
 
 interface ProductCardProps {
   product: Product;
@@ -20,7 +21,9 @@ export default function ProductCard({
 }: ProductCardProps) {
   return (
     <section className="py-16 lg:py-24">
+      
       <div className="container mx-auto px-4 lg:px-8">
+        <NavigateBack/>
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div
             className={`flex justify-center ${
@@ -66,7 +69,7 @@ export default function ProductCard({
             {showDetails ? (
               <>
                 <p className="font-semibold text-lg">{`$ ${product.price}`}</p>
-                <QuantitySelector />
+                <ProductActions product={product}/>
               </>
             ) : (
               <Button>
